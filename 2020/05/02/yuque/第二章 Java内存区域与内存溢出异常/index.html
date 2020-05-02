@@ -10,7 +10,7 @@
     <title>第二章 Java内存区域与内存溢出异常 | 小伴龙只要两样</title>
     <meta name="author" content="Jiaway" />
     <meta name="keywords" content="" />
-    <meta name="description" content="Java 与 C++之间有一堵由内存动态分配和垃圾收集技术所围成的“高墙”，墙外面的人想进去，墙里面的人却想出来。2.1 概述对于 Java 程序员来说，在虚拟机自动内存管理机制的帮助下，不再需要为每一个 new 操作去写配对的 delete/free 代码，不容易出现内存泄漏和内存溢出问题，由虚拟机管理内存这一切看起来都很美好。不过，也正是因为 Java 程序员把内存控制的权力交给了 Java 虚拟机，一旦出现内存泄漏和溢出方面的问题，如果不了解虚拟机是怎样使用内存的，那么排查错误..." />
+    <meta name="description" content="Java 与 C++之间有一堵由内存动态分配和垃圾收集技术所围成的“高墙”，墙外面的人想进去，墙里面的人却想出来。2.1 概述对于 Java 程序员来说，在虚拟机自动内存管理机制的帮助下，不再需要为每一个 new 操作去写配对的 delete/free 代码，不容易出现内存泄漏和内存溢出问题，由虚拟机管理内存这一切看起来都很美好。不过，也正是因为 Java 程序员把内存控制的权力交给了 Java 虚拟机，一旦出现内存泄漏和溢出方面的问题，如果不了解虚拟机是怎样使用内存的，那么排查错误将会..." />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
 
@@ -132,11 +132,6 @@
 </a>
 
             
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">深入理解Java虚拟机</a>
-</div>
-
 
         </div>
     </header>
@@ -144,8 +139,6 @@
     <section class="article-body markdown-body">
         
         <p>Java 与 C++之间有一堵由内存动态分配和垃圾收集技术所围成的“高墙”，墙外面的人想进去，墙里面的人却想出来。</p>
-<a id="more"></a>
-
 <h2 id="2-1-概述"><a href="#2-1-概述" class="headerlink" title="2.1 概述"></a>2.1 概述</h2><p>对于 Java 程序员来说，在虚拟机自动内存管理机制的帮助下，不再需要为每一个 new 操作去写配对的 delete/free 代码，不容易出现内存泄漏和内存溢出问题，由虚拟机管理内存这一切看起来都很美好。不过，也正是因为 Java 程序员把内存控制的权力交给了 Java 虚拟机，一旦出现内存泄漏和溢出方面的问题，如果不了解虚拟机是怎样使用内存的，那么排查错误将会成为一项异常艰难的工作。<br>Java 虚拟机在执行 Java 程序的过程中会把它所管理的内存划分为若干个不同的数据区域<br><img src="https://cdn.nlark.com/yuque/0/2020/png/316687/1586876821816-082743d2-00b0-4360-bb5c-983a99b989fc.png#align=left&display=inline&height=262&margin=%5Bobject%20Object%5D&name=image.png&originHeight=448&originWidth=517&size=107899&status=done&style=none&width=302" alt="image.png"></p>
 <h2 id="2-2-运行时数据区域"><a href="#2-2-运行时数据区域" class="headerlink" title="2.2 运行时数据区域"></a>2.2 运行时数据区域</h2><h3 id="2-2-1-程序计数器"><a href="#2-2-1-程序计数器" class="headerlink" title="2.2.1 程序计数器"></a>2.2.1 程序计数器</h3><p>一块较小的内存空间，可以看做行号指示器，字节码解释器工作时，就是通过这个<strong>计数器的值来选取下一个指令，分支 循环   跳转 异常处理 线程恢复 等都靠这个计数器完成</strong></p>
 <p>Java 虚拟机的多线程是通过线程轮流切换并分配处理器执行时间的方式来实现的，每条线程都需要有一个独立的程序计数器，各条线程，之间计数器互不影响，独立存储，我们称这类内存区域为“线程私有”的内存，如果线程正在执行的是一个 Java 方法，这个计数器记录的是正在执行的虚拟机字节码指令的地址；如果正在执行的是 Native 方法，这个计数器值则为空（Undefined）。此内存区域是唯一一个在 Java 虚拟机规范中没有规定任何 OutOfMemory-Error 情况的区域。</p>
@@ -213,6 +206,8 @@
 <a id="pagenext" href="/2020/04/25/hello-world/" class="article-next" title="Hello World"><i class="icon-arrow-right"></i></a>
 
 
+<a id="pageprev" href="/2020/05/02/yuque/%E5%89%8D%E7%AB%AF%E8%AE%AD%E7%BB%83%E8%90%A5%2000%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E4%B8%8E%E6%9E%84%E5%BB%BA%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/" class="article-prev" title="前端训练营 00学习方法与构建知识体系"><i class="icon-arrow-left"></i></a>
+
 
 
 <div class="comments">
@@ -229,7 +224,7 @@
         distractionFreeMode: true,
         title: "第二章 Java内存区域与内存溢出异常",
         body: "http://www.jiaway.com/2020/05/02/yuque/%E7%AC%AC%E4%BA%8C%E7%AB%A0%20Java%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E4%B8%8E%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA%E5%BC%82%E5%B8%B8/",
-        labels: ["深入理解Java虚拟机"]
+        labels: []
     }).render('comments');
     </script>
 </div>
