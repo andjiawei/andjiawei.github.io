@@ -7,7 +7,7 @@
 
     
 
-    <title>小伴龙只要两样</title>
+    <title>Category: read-book | 小伴龙只要两样</title>
     <meta name="author" content="Jiaway" />
     <meta name="keywords" content="" />
     <meta name="description" content="" />
@@ -59,7 +59,7 @@
 
     <nav id="nav-inner" class="nav-inner">
         
-            <a class="nav-item active" href="/">
+            <a class="nav-item" href="/">
                 <span class="nav-text">首页</span>
             </a>
         
@@ -75,7 +75,7 @@
                 <span class="nav-text">大数据</span>
             </a>
         
-            <a class="nav-item" href="/categories/read-book">
+            <a class="nav-item active" href="/categories/read-book">
                 <span class="nav-text">读书</span>
             </a>
         
@@ -137,7 +137,7 @@
         </h1>
         
         <div class="article-meta clearfix">
-            <a class="article-date" href="http://www.jiaway.com/index.html">
+            <a class="article-date" href="http://www.jiaway.com/categories/read-book/index.html">
     
     <i class="icon-calendar"></i>
     
@@ -214,48 +214,6 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String str1 = <span class="keyword">new</span> StringBuilder(<span class="string">"计算机"</span>).append(<span class="string">"软件"</span>).toString();</span><br><span class="line">        System.out.println(str1.intern() == str1);<span class="comment">//</span></span><br><span class="line">        String str2 = <span class="keyword">new</span> StringBuilder(<span class="string">"ja"</span>).append(<span class="string">"va"</span>).toString();</span><br><span class="line">        System.out.println(str2.intern() == str2);<span class="comment">//false</span></span><br><span class="line">    	<span class="comment">//"java"这个关键字sun.misc.Version中已经加载过了</span></span><br><span class="line">    	<span class="comment">//如果版本是openjdk 那么openkjdk也会返回false</span></span><br><span class="line">    	<span class="comment">//参考https://www.lagou.com/lgeduarticle/99683.html</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-4-4-本机直接内存溢出"><a href="#2-4-4-本机直接内存溢出" class="headerlink" title="2.4.4 　本机直接内存溢出"></a>2.4.4 　本机直接内存溢出</h3><p>直接内存（Direct Memory）的容量大小可通过-XX：MaxDirectMemorySize 参数来指定，如果不<br>去指定，则默认与 Java 堆最大值（由-Xmx 指定）一致</p>
-
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2020/04/25/hello-world/">Hello World</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://www.jiaway.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2020-04-25T10:15:57.600Z" itemprop="datePublished">2020-04-25</time>
-</a>
-
-            
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
         
     </section>
